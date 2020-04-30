@@ -35,4 +35,134 @@
     </div>
 </div>
 
+{{!-- Create Modal --}}
+{{!-- <div class="modal fade" id="createModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Создание</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <legend>Edit tour:</legend>
+                    <div class="form-group">
+                        <label for="">Название тура:</label>
+                        <input type="text" class="form-control" id="tourTitle1">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Маршрут:</label>
+                        <input type="text" class="form-control" id="tourRoute1">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Дни:</label>
+                        <input type="text" class="form-control" id="tourDays1">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Цена:</label>
+                        <input type="text" class="form-control" id="tourPrice1">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="tourCreate">Save</button>
+            </div>
+        </div>
+    </div>
+</div> --}}
 
+{{!-- Edit Modal --}}
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Edit product</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="productTitle">Title:</label>
+                        <input type="text" class="form-control" id="productTitle" name="productTitle" placeholder="Enter name of product">
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Description:</label>
+                        <textarea class="form-control" id="productDescription" name="productDescription"
+                            rows="3" placeholder="Enter description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Price:</label>
+                        <input type="text" class="form-control" id="productPrice" name="productPrice" placeholder="Enter price">
+                    </div>
+                    <div class="form-group">
+                        <label for="productColor">Color:</label>
+                        <input type="text" class="form-control" id="productColor" name="productColor" placeholder="Enter color of product">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Size:</label>
+                        <label class="checkbox-inline">
+                            <input id="sizeXS" name="size" type="checkbox" value="XS"> XS
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="sizeS" name="size" type="checkbox" value="S"> S
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="sizeM" name="size" type="checkbox" value="M"> M
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="sizeL" name="size" type="checkbox" value="L"> L
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="sizeXL" name="size" type="checkbox" value="XL"> XL
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="productMaterials">Materials:</label>
+                        <input type="text" class="form-control" id="productMaterials" name="productMaterials" placeholder="Enter materials">
+                    </div>
+                    <div class="form-group">
+                        <label for="productCountry">Country:</label>
+                        <input type="text" class="form-control" id="productCountry" name="productCountry" placeholder="Enter country">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Availability:</label>
+                        <label class="radio-inline">
+                            <input id="avTrue" name="availability" type="radio"> Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input id="avFalse" name="availability" type="radio"> No
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Season:</label>
+                        <label class="checkbox-inline">
+                            <input id="seasonWinter" name="season" type="checkbox" class="custom-control-input"
+                            value="Winter"> Winter
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="seasonSpring" name="season" type="checkbox" class="custom-control-input"
+                            value="Spring"> Spring
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="seasonSummer" name="season" type="checkbox" class="custom-control-input"
+                            value="Summer"> Summer
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="seasonAutumn" name="season" type="checkbox"
+                            value="Autumn"> Autumn
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImage">Image URL:</label>
+                        <input type="text" class="form-control" id="productImage" name="productImage" placeholder="Enter image URL">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="productSave">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

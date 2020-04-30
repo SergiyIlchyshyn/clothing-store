@@ -9,9 +9,9 @@ exports.findAll = (req, res) => {
 
 // Find a sigle note with a noteId
 exports.findOne = (req, res) => {
-    // tour.findById(req.params.id)
-    //     .then(result => res.status(200).json(result))
-    //     .catch(err => res.status(500).json(err));
+    Product.findById(req.params.id)
+        .then(result => res.status(200).json(result))
+        .catch(err => res.status(500).json(err));
 };
 
 // Update a note identified by the noteId in the request
