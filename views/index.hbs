@@ -36,41 +36,94 @@
 </div>
 
 {{!-- Create Modal --}}
-{{!-- <div class="modal fade" id="createModal">
+<div class="modal fade" id="createModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Создание</h4>
+                <h4 class="modal-title">Add product</h4>
             </div>
             <div class="modal-body">
                 <form>
-                    <legend>Edit tour:</legend>
                     <div class="form-group">
-                        <label for="">Название тура:</label>
-                        <input type="text" class="form-control" id="tourTitle1">
+                        <label for="addProductTitle">Title:</label>
+                        <input type="text" class="form-control" id="addProductTitle" name="addProductTitle" placeholder="Enter name of product">
                     </div>
                     <div class="form-group">
-                        <label for="">Маршрут:</label>
-                        <input type="text" class="form-control" id="tourRoute1">
+                        <label for="addProductDescription">Description:</label>
+                        <textarea class="form-control" id="addProductDescription" name="addProductDescription" rows="3" placeholder="Enter description"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="">Дни:</label>
-                        <input type="text" class="form-control" id="tourDays1">
+                        <label for="addProductPrice">Price:</label>
+                        <input type="text" class="form-control" id="addProductPrice" name="addProductPrice" placeholder="Enter price">
                     </div>
                     <div class="form-group">
-                        <label for="">Цена:</label>
-                        <input type="text" class="form-control" id="tourPrice1">
+                        <label for="addProductColor">Color:</label>
+                        <input type="text" class="form-control" id="addProductColor" name="addProductColor" placeholder="Enter color of product">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Size:</label>
+                        <label class="checkbox-inline">
+                            <input id="addSizeXS" name="addsize" type="checkbox" value="XS"> XS
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="addSizeS" name="addsize" type="checkbox" value="S"> S
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="addSizeM" name="addsize" type="checkbox" value="M"> M
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="addSizeL" name="addsize" type="checkbox" value="L"> L
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="addSizeXL" name="addsize" type="checkbox" value="XL"> XL
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="addProductMaterials">Materials:</label>
+                        <input type="text" class="form-control" id="addProductMaterials" name="addProductMaterials" placeholder="Enter materials">
+                    </div>
+                    <div class="form-group">
+                        <label for="addProductCountry">Country:</label>
+                        <input type="text" class="form-control" id="addProductCountry" name="addProductCountry" placeholder="Enter country">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Availability:</label>
+                        <label class="radio-inline">
+                            <input id="addTrue" name="addavailability" type="radio"> Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input id="addFalse" name="addavailability" type="radio"> No
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Season:</label>
+                        <label class="checkbox-inline">
+                            <input id="addSeasonWinter" name="addseason" type="checkbox" value="Winter"> Winter
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="addSeasonSpring" name="addseason" type="checkbox" value="Spring"> Spring
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="addSeasonSummer" name="addseason" type="checkbox" value="Summer"> Summer
+                        </label>
+                        <label class="checkbox-inline">
+                            <input id="addSeasonAutumn" name="addseason" type="checkbox" value="Autumn"> Autumn
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="addProductImage">Image URL:</label>
+                        <input type="text" class="form-control" id="addProductImage" name="addProductImage" placeholder="Enter image URL">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" id="tourCreate">Save</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="productCreate">Save</button>
             </div>
         </div>
     </div>
-</div> --}}
+</div>
 
 {{!-- Edit Modal --}}
 <div class="modal fade" id="editModal">

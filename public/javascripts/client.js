@@ -58,6 +58,34 @@ function showDeleteDialog() {
         .catch(err => alert(err));
 }
 
+function createProduct() {
+    let data = {
+        title: createDialog.title.value,
+        description: createDialog.description.value,
+        imagePath: createDialog.imagePath.value,
+        price: createDialog.price.value,
+        color: createDialog.color.value,
+        // size: createDialog.size.value,
+        size: ["XS", "S", "M", "L", "XL"],
+        // availability: createDialog.availability.value,
+        availability: true,
+        // season: createDialog.season.value,
+        season: ["Winter", "Spring", "Summer", "Autumn"],
+        materials: createDialog.materials.value,
+        country: createDialog.country.value
+    };
+    fetch(`/products`, {
+            method: 'POST',
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(fillTable())
+        .catch(err => alert(err));
+}
+
 function saveProduct() {
     let data = {
         title: editDialog.title.value,
@@ -116,11 +144,24 @@ window.onload = function() {
     editDialog.imagePath = this.document.getElementById('productImage');
     editDialog.price = this.document.getElementById('productPrice');
     editDialog.color = this.document.getElementById('productColor');
-    // editDialog.size = this.document.getElementById('tourRoute');
+    // editDialog.size = this.document.getElementById('size');
     editDialog.materials = this.document.getElementById('productMaterials');
     editDialog.country = this.document.getElementById('productCountry');
-    // editDialog.availability = this.document.getElementById('tourDays');
-    // editDialog.season = this.document.getElementById('tourPrice');
+    // editDialog.availability = this.document.getElementById('availability');
+    // editDialog.season = this.document.getElementById('season');
     editDialog.saveButton = this.document.getElementById('productSave');
     editDialog.saveButton.onclick = saveProduct;
+    //==============================================================================
+    createDialog.title = this.document.getElementById('addProductTitle');
+    createDialog.description = this.document.getElementById('addProductDescription');
+    createDialog.imagePath = this.document.getElementById('addProductImage');
+    createDialog.price = this.document.getElementById('addProductPrice');
+    createDialog.color = this.document.getElementById('addProductColor');
+    // createDialog.size = this.document.getElementById('addsize');
+    createDialog.materials = this.document.getElementById('addProductMaterials');
+    createDialog.country = this.document.getElementById('addProductCountry');
+    // createDialog.availability = this.document.getElementById('addavailability');
+    // createDialog.season = this.document.getElementById('addseason');
+    createDialog.saveButton = this.document.getElementById('productCreate');
+    createDialog.saveButton.onclick = createProduct;
 };
