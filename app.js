@@ -7,7 +7,7 @@ var logger = require('morgan');
 //MONGOOSE======================================================================
 var mongoose = require('mongoose');
 // Для подключения к БД shopping применяем метод connect()
-mongoose.connect('mongodb://localhost:27017/woman_wear', {
+mongoose.connect('mongodb://localhost:27017/shopping', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
@@ -19,9 +19,9 @@ mongoose.connect('mongodb://localhost:27017/woman_wear', {
     });
 mongoose.Promise = global.Promise;
 //==============================================================================
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var productsRouter = require('./routes/products');
 //==============================================================================
 var app = express();
 
@@ -34,10 +34,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+//==============================================================================
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/products', productsRouter);
+//==============================================================================
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     next(createError(404));

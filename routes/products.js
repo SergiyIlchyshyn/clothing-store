@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const tours = require('../controllers/products.controller');
+const products = require('../controllers/products.controller');
 
 // GET - вся продукція
 router.get('/', products.findAll);
