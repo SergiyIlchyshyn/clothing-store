@@ -45,6 +45,19 @@ function showEditDialog() {
         .catch(err => alert(err));
 }
 
+function showDeleteDialog() {
+    // console.log(this.dataset.id);
+    fetch(`/products/${this.dataset.id}`, {
+            method: 'DELETE',
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(fillTable())
+        .catch(err => alert(err));
+}
+
 function saveProduct() {
     let data = {
         title: editDialog.title.value,
@@ -88,10 +101,10 @@ function fillTable() {
             editButtons.forEach(element => {
                 element.onclick = showEditDialog;
             });
-            // let deleteButtons = Array.from(document.getElementsByClassName('btn-delete'));
-            // deleteButtons.forEach(element => {
-            //     element.onclick = showDeleteDialog;
-            // });
+            let deleteButtons = Array.from(document.getElementsByClassName('btn-delete'));
+            deleteButtons.forEach(element => {
+                element.onclick = showDeleteDialog;
+            });
         })
         .catch(err => alert(err));
 }
