@@ -31,7 +31,9 @@ function showEditDialog() {
         .then(res => res.json())
         .then(res => {
             editDialog.title.value = res.title;
-            editDialog.description.value = res.description;
+            // editDialog.description.value = res.description;
+            let markupStr = res.description;
+            $('#productDescription').summernote('code', markupStr);
             editDialog.imagePath.value = res.imagePath;
             editDialog.price.value = res.price;
             editDialog.color.value = res.color;
@@ -89,7 +91,8 @@ function createProduct() {
 function saveProduct() {
     let data = {
         title: editDialog.title.value,
-        description: editDialog.description.value,
+        // description: editDialog.description.value,
+        description: $('#productDescription').summernote('code'),
         imagePath: editDialog.imagePath.value,
         price: editDialog.price.value,
         color: editDialog.color.value,
@@ -164,4 +167,7 @@ window.onload = function() {
     // createDialog.season = this.document.getElementById('addseason');
     createDialog.saveButton = this.document.getElementById('productCreate');
     createDialog.saveButton.onclick = createProduct;
-};
+
+    //summernote-editor==============================================================
+    $('#productDescription').summernote();
+}
