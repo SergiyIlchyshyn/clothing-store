@@ -169,5 +169,26 @@ window.onload = function() {
     createDialog.saveButton.onclick = createProduct;
 
     //summernote-editor==============================================================
-    $('#productDescription').summernote();
+    $('#productDescription').summernote({
+        toolbar: [
+                // [groupName, [list of button]]
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['fontsize', ['fontsize']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['height', ['height']]
+            ]
+            // airMode: true,
+            // popover: {
+            //     air: [
+            //         ['style', ['bold', 'italic', 'underline', 'clear']],
+            //         ['font', ['strikethrough', 'superscript', 'subscript']],
+            //         ['fontsize', ['fontsize']],
+            //         ['fontname', ['fontname']],
+            //         ['color', ['color']],
+            //         ['height', ['height']]
+            //     ]
+            // }
+    });
 }
