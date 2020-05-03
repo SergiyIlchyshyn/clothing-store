@@ -172,31 +172,21 @@ window.onload = function() {
     //summernote-editor==============================================================
     $('#productDescription').summernote({
         heigh: 300,
-        // toolbar: [
-        //         // [groupName, [list of button]]
-        //         ['style', ['bold', 'italic', 'underline', 'clear']],
-        //         ['font', ['strikethrough', 'superscript', 'subscript']],
-        //         ['fontsize', ['fontsize']],
-        //         ['fontname', ['fontname']],
-        //         ['color', ['color']],
-        //         ['height', ['height']]
-        //     ]
-        // airMode: true,
-        // popover: {
-        //     air: [
-        //         ['style', ['bold', 'italic', 'underline', 'clear']],
-        //         ['font', ['strikethrough', 'superscript', 'subscript']],
-        //         ['fontsize', ['fontsize']],
-        //         ['fontname', ['fontname']],
-        //         ['color', ['color']],
-        //         ['height', ['height']]
-        //     ]
-        // }
+        toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['height', ['height']],
+            ['insert', ['picture']]
+        ],
+        // maximumImageFileSize: 524288, // 512KB
         callbacks: {
             onImageUpLoad: function(files) {
                 for (let i = 0; i < files.length; i++) {
                     sendFile(files[i]);
-
                 }
             }
         }

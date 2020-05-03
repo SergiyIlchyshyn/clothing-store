@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-
+var maxSize = 1 * 1000 * 1000;
 // SET STORAGE
 const storage = multer.diskStorage({
     destination: function(req, file, cd) {
@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage: storage })
+const upload = multer({ storage: storage, limits: { fileSize: maxSize } })
 
 // POST - /api/image/upload
 router.post('/upload', upload.single('file'), (req, res, next) => {
