@@ -140,6 +140,7 @@ function fillTable() {
         .catch(err => alert(err));
 }
 
+
 window.onload = function() {
     fillTable();
     editDialog.title = this.document.getElementById('productTitle');
@@ -170,6 +171,7 @@ window.onload = function() {
 
     //summernote-editor==============================================================
     $('#productDescription').summernote({
+        heigh: 300,
         // toolbar: [
         //         // [groupName, [list of button]]
         //         ['style', ['bold', 'italic', 'underline', 'clear']],
