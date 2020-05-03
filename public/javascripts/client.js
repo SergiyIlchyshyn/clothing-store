@@ -170,25 +170,49 @@ window.onload = function() {
 
     //summernote-editor==============================================================
     $('#productDescription').summernote({
-        toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['fontname', ['fontname']],
-                ['color', ['color']],
-                ['height', ['height']]
-            ]
-            // airMode: true,
-            // popover: {
-            //     air: [
-            //         ['style', ['bold', 'italic', 'underline', 'clear']],
-            //         ['font', ['strikethrough', 'superscript', 'subscript']],
-            //         ['fontsize', ['fontsize']],
-            //         ['fontname', ['fontname']],
-            //         ['color', ['color']],
-            //         ['height', ['height']]
-            //     ]
-            // }
+        // toolbar: [
+        //         // [groupName, [list of button]]
+        //         ['style', ['bold', 'italic', 'underline', 'clear']],
+        //         ['font', ['strikethrough', 'superscript', 'subscript']],
+        //         ['fontsize', ['fontsize']],
+        //         ['fontname', ['fontname']],
+        //         ['color', ['color']],
+        //         ['height', ['height']]
+        //     ]
+        // airMode: true,
+        // popover: {
+        //     air: [
+        //         ['style', ['bold', 'italic', 'underline', 'clear']],
+        //         ['font', ['strikethrough', 'superscript', 'subscript']],
+        //         ['fontsize', ['fontsize']],
+        //         ['fontname', ['fontname']],
+        //         ['color', ['color']],
+        //         ['height', ['height']]
+        //     ]
+        // }
+        callbacks: {
+            onImageUpLoad: function(files) {
+                for (let i = 0; i < files.length; i++) {
+                    sendFile(files[i]);
+
+                }
+            }
+        }
     });
+
+    function sendFile(file) {
+        data = new FormData();
+        data.append("file", file);
+        fetch('/api/image/upload', {
+                method: 'POST',
+                cache: 'no-cache',
+                body: data
+            })
+            .then(res => res.text())
+            .then(res => {
+                $('#productDescription').summernote('insertImage', res);
+            }).catch(err => {
+                alert(err);
+            })
+    }
 }
