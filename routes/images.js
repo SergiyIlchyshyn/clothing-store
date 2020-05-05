@@ -1,19 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-var maxSize = 1 * 1000 * 1000;
+
 // SET STORAGE
 const storage = multer.diskStorage({
     destination: function(req, file, cd) {
-        cd(null, 'public/images')
+        cd(null, 'public/images');
     },
     filename: function(req, file, cb) {
         // console.log(file);
-        cb(null, Date.now() + '-' + file.originalname)
+        cb(null, Date.now() + '-' + file.originalname);
+    },
+    limits: {
+        fileSize: 1024 * 1024
     }
 });
 
-const upload = multer({ storage: storage, limits: { fileSize: maxSize } })
+const upload = multer({ storage: storage })
 
 // POST - /api/image/upload
 router.post('/upload', upload.single('file'), (req, res, next) => {
