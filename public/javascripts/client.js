@@ -102,7 +102,7 @@ function saveProduct() {
         // availability: editDialog.availability.value,
         // season: editDialog.season.value
     };
-    console.log(data);
+    console.log(JSON.stringify(data).length);
     fetch(`/products/${this.dataset.id}`, {
             method: 'PUT',
             cache: 'no-cache',
@@ -171,17 +171,17 @@ window.onload = function() {
 
     //summernote-editor==============================================================
     $('#productDescription').summernote({
-        heigh: 300,
-        toolbar: [
-            // [groupName, [list of button]]
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough', 'superscript', 'subscript']],
-            ['fontsize', ['fontsize']],
-            ['fontname', ['fontname']],
-            ['color', ['color']],
-            ['height', ['height']],
-            ['insert', ['picture']]
-        ],
+        // heigh: 300,
+        // toolbar: [
+        //     // [groupName, [list of button]]
+        //     ['style', ['bold', 'italic', 'underline', 'clear']],
+        //     ['font', ['strikethrough', 'superscript', 'subscript']],
+        //     ['fontsize', ['fontsize']],
+        //     ['fontname', ['fontname']],
+        //     ['color', ['color']],
+        //     ['height', ['height']],
+        //     ['insert', ['picture']]
+        // ],
         // maximumImageFileSize: 524288, // 512KB
         callbacks: {
             onImageUpLoad: function(files) {
@@ -202,6 +202,7 @@ window.onload = function() {
             })
             .then(res => res.text())
             .then(res => {
+                console.log(res);
                 $('#productDescription').summernote('insertImage', res);
             }).catch(err => {
                 alert(err);

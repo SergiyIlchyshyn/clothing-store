@@ -12,7 +12,8 @@ const storage = multer.diskStorage({
         cb(null, Date.now() + '-' + file.originalname);
     },
     limits: {
-        fileSize: 1024 * 1024
+        fileSize: 1024 * 1024 * 10,
+        fieldSize: 1024 * 1024 * 10
     }
 });
 
