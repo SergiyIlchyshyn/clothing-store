@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 //MONGOOSE======================================================================
 var mongoose = require('mongoose');
 // Для подключения к БД shopping применяем метод connect()
-mongoose.connect('mongodb://localhost:27017/shopping', {
+mongoose.connect('mongodb+srv://student:*****@cluster0-qse6h.mongodb.net/sample-database', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
@@ -19,6 +19,7 @@ mongoose.connect('mongodb://localhost:27017/shopping', {
         console.log(Error, err.message);
     });
 mongoose.Promise = global.Promise;
+
 //==============================================================================
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -57,8 +58,8 @@ app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(bodyParser.json({ limit: '200kb' }));
-app.use(bodyParser.urlencoded({ limit: '51200', extended: true, parameterLimit: 50000 }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 //==============================================================================

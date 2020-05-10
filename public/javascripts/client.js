@@ -44,7 +44,7 @@ function showEditDialog() {
             // editDialog.season.value = res.season;
             editDialog.saveButton.dataset.id = this.dataset.id;
         })
-        .catch(err => alert(err));
+        .catch(err => alert(err.mes));
 }
 
 function showDeleteDialog() {
@@ -171,7 +171,7 @@ window.onload = function() {
 
     //summernote-editor==============================================================
     $('#productDescription').summernote({
-        // heigh: 300,
+        height: 300,
         // toolbar: [
         //     // [groupName, [list of button]]
         //     ['style', ['bold', 'italic', 'underline', 'clear']],
@@ -181,13 +181,13 @@ window.onload = function() {
         //     ['color', ['color']],
         //     ['height', ['height']],
         //     ['insert', ['picture']]
-        // ],
-        // maximumImageFileSize: 524288, // 512KB
+        // ],       
         callbacks: {
-            onImageUpLoad: function(files) {
-                for (let i = 0; i < files.length; i++) {
-                    sendFile(files[i]);
-                }
+            onImageUpload: function(files) {
+                // for (let i = 0; i < files.length; i++) {
+                //     sendFile(files[i]);
+                // }
+                sendFile(files[0]);
             }
         }
     });

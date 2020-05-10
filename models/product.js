@@ -12,6 +12,6 @@ let Product = new productSchema({
     country: { type: String, required: true },
     availability: { type: Boolean, required: true },
     season: { type: Array, required: true }
-}, { collection: 'woman_wear' });
+});
 
-module.exports = mongoose.model('Product', Product);
+module.exports = mongoose.model('Product', Product, 'woman_wear');
